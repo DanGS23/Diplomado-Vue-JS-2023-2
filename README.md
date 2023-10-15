@@ -1,3 +1,10 @@
+# Integrantes
+
+- DANIEL DAVID GONZALEZ SOSSA
+- JOVANNY FUENTES CORREA
+- MARIA CLAUIDIA AVILA PASTRANA
+- NAURYSTELLA SAENZ CORTES
+  
 # diplomado-VUE-JS
 
 This template should help get you started developing with Vue 3 in Vite.
