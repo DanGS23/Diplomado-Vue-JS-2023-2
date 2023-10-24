@@ -49,18 +49,22 @@
     <br>
     <hr>
     <br>
-    <div>
-        <canvas id="myChart" class=""></canvas>
-        <canvas id="myChart2" class=""></canvas>
+    <div class="grid md:grid-cols-2 gap-2 mx-2 pb-4 ">
+        <div class="flex justify-center items-center bg-gray-100 w-full h-96 shadow-md rounded">
+            <canvas id="myChart" class="px-2"></canvas>
+        </div>
+        <div class="flex justify-center items-center bg-gray-100 w-full h-96 shadow-md rounded">
+            <canvas id="myChart2" class="px-2"></canvas>
+        </div>
     </div>
     <hr class="ml-4 mr-4 border-2 ">
         <div class="flex justify-between px-8 py-8">
-          <a href="/src/pages/index.html"><button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 uppercase">Regresar</button>
-          </a>
+          <router-link to="/lista-Hotel"><button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 uppercase">Regresar</button>
+          </router-link>
           <div class="mr-8">
-            <a href="/src/pages/views/viewsHab/habPrincipal.html"><button type="button" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 uppercase">Agregar Habitacion </button></a>
+            <router-link to="/crearHab"><button type="button" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 uppercase">Agregar Habitacion </button></router-link>
 
-            <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 uppercase">Eliminar</button>
+            <router-link to="/listaHab"><button type="button" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 uppercase">Listado Habitaciones</button></router-link>
           </div>
         </div>
     </div>
@@ -71,36 +75,71 @@ import Chart from 'chart.js/auto';
 
 export default{
     mounted(){
-    const ctx= document.getElementById("myChart").getContext("2d");
-    const myChart= new Chart(ctx,{
-    type:"bar",
-    data:{
-        labels:['Sencilla','Junior','Suite'],
-        datasets:[{
-                label:'Habitacion',
-                data:[10,15,5],
-                backgroundColor:[
-                    'rgb(66, 134, 244,0.5)',
-                    'rgb(74, 135, 72,0.5)',
-                    'rgb(229, 89, 50,0.5)'
-                ]
-        }]
+        this.renderGraft1();
+        this.renderGraft2();
     },
-    options:{
-        scales:{
-            yAxes:[{
-                    ticks:{
-                        beginAtZero:true
+    methods:{
+    
+    renderGraft1(){
+        const ctx= document.getElementById("myChart").getContext("2d");
+        const myChart= new Chart(ctx,{
+                type:"bar",
+                data:{
+                    labels:['Sencilla','Junior','Suite'],
+                    datasets:[{
+                            label:'Tipo de Habitacion',
+                            data:[10,15,5],
+                            backgroundColor:[
+                                'rgb(66, 134, 244,0.5)',
+                                'rgb(74, 135, 72,0.5)',
+                                'rgb(229, 89, 50,0.5)'
+                            ]
+                    }]
+                },
+                options:{
+                    scales:{
+                        yAxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                        }]
                     }
-            }]
-        }
-    }
-});
+                }
+            });
+
+         },
+         renderGraft2(){
+        const ctx = document.getElementById("myChart2").getContext("2d");
+        const myChart2 = new Chart(ctx,{
+            type:"bar",
+            data:{
+                labels:['Sencilla','Doble','Tripe','Cuadruple' ],
+                datasets:[{
+                        label:'Acomodación',
+                        data:[10,15,5,9],
+                        backgroundColor:[
+                            'rgb(66, 134, 244,0.5)',
+                            'rgb(74, 135, 72,0.5)',
+                            'rgb(229, 89, 50,0.5)'
+                        ]
+                }]
+            },
+            options:{
+                scales:{
+                    yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            }
+                    }]
+                }
+            }
+        });
+
+    },
 
     }
-    
-    
 }
+
 </script>
 
 <style lang="scss" scoped>

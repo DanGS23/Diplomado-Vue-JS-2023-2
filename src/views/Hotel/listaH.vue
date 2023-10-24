@@ -47,9 +47,11 @@
                        200
                    </td>
                    <td class="px-2 py-4 mx-2">
-                        <div class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg">
-                            <router-link to="/detalle-Hotel" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
-                        </div>   
+                    <div class="space-x-1">
+                            <router-link to="/detalle-Hotel" class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
+                            <router-link to="/editar-Hotel" class="p-2 bg-green-300 border-2 border-green-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Editar</button></router-link>
+                            <button @click="showAlert" type="button" class="p-2 bg-red-500 border-2 border-red-400 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
+                         </div>   
                    </td>
                 </tr>
                 <tr class="bg-blue-100 hover:bg-blue-200">
@@ -69,8 +71,10 @@
                         200
                     </td>
                     <td class="px-2 py-4 mx-2">
-                         <div class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg">
-                            <router-link to="/detalle-Hotel" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
+                        <div class="space-x-1">
+                            <router-link to="/detalle-Hotel" class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
+                            <router-link to="/editar-Hotel" class="p-2 bg-green-300 border-2 border-green-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Editar</button></router-link>
+                            <button @click="showAlert" type="button" class="p-2 bg-red-500 border-2 border-red-400 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
                          </div>   
                     </td>
                  </tr>
@@ -91,9 +95,11 @@
                         200
                     </td>
                     <td class="px-2 py-4 mx-2">
-                         <div class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg">
-                            <router-link to="/detalle-Hotel" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
-                         </div>   
+                        <div class="space-x-1">
+                            <router-link to="/detalle-Hotel" class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
+                            <router-link to="/editar-Hotel" class="p-2 bg-green-300 border-2 border-green-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Editar</button></router-link>
+                            <button @click="showAlert" type="button" class="p-2 bg-red-500 border-2 border-red-400 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
+                         </div> 
                     </td>
                  </tr>
                  <tr class="bg-blue-100 hover:bg-blue-200">
@@ -113,8 +119,10 @@
                         200
                     </td>
                     <td class="px-2 py-4 mx-2">
-                         <div class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg">
-                            <router-link to="/detalle-Hotel" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
+                         <div class="space-x-1">
+                            <router-link to="/detalle-Hotel" class="p-2 bg-yellow-300 border-2 border-yellow-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Ver Detalles</button></router-link>
+                            <router-link to="/editar-Hotel" class="p-2 bg-green-300 border-2 border-green-500 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Editar</button></router-link>
+                            <button @click="showAlert" type="button" class="p-2 bg-red-500 border-2 border-red-400 rounded-lg text-xs font-semibold text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
                          </div>   
                     </td>
                  </tr>
@@ -125,7 +133,35 @@
 </div>
 </template>
 
-<script setup>
+<script >
+import Swal from 'sweetalert2';
+
+export default{
+    mounted(){
+
+    },
+    methods:{
+        showAlert() {
+      // Use sweetalert2
+      Swal.fire({
+        title: 'Quieres eliminar un hotel?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Hotel Eliminado!',
+            '',
+            'success'
+            )
+        }
+        })
+    },
+}
+}
 
 </script>
 

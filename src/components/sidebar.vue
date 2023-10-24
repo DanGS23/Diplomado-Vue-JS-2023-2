@@ -1,5 +1,5 @@
 <template>
-<nav class="fixed top-0 z-50 w-full bg-cyan-700 border-b border-gray-400 dark:bg-gray-800 dark:border-gray-700">
+<!-- <nav class="fixed top-0 z-50 w-full bg-cyan-700 border-b border-gray-400 dark:bg-gray-800 dark:border-gray-700">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-start">
@@ -32,51 +32,41 @@
  <div class="h-full overflow-y-auto bg-blue dark:bg-gray-800">
       <ul class="space-y-2 font-medium p-4 ">
          <li>
-             <a href="/index.html" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200 " >
+             <router-link to="/dashboard" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200 " >
                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                    </svg>
                    <span class= "group-hover:text-white">Dashboard</span>
-             </a>
+             </router-link>
          </li>
          <li>
-            <a href="/" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200">
+            <router-link to="/crear-Hotel" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200">
                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                    </svg>
-                   <router-link to="/crear-Hotel" class= "group-hover:text-white">Crear Hotel</router-link>
-             </a>
+                   <span class= "group-hover:text-white">Crear Hotel</span>
+             </router-link>
          </li>
          <li>
-             <a href="" data-url="./views/lista.html" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200">
+             <router-link to="/lista-Hotel" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200">
                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                    </svg>
-                   <router-link to="/lista-Hotel" class=" group-hover:text-white">Lista Hotel</router-link>
-             </a>
+                   <span class=" group-hover:text-white">Lista Hotel</span>
+             </router-link>
          </li>
          <li>
-             <a href="#" data-url="./views/editar.html" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200">
+             <router-link to="/editar-Hotel" class="group flex items-center space-x-2 py-3 px-4 hover:bg-cyan-700 rounded hover:text-white transition duration-200">
                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                    </svg>                          
-                   <router-link to="/editar-Hotel" class="group-hover:text-white">Editar</router-link>
-             </a>
+                   <span class="group-hover:text-white">Editar</span>
+             </router-link>
          </li>
         </ul>
      </div>
-    </aside>
+    </aside> -->
 </template>
 
-<script >
-import { ref } from 'vue';
-export default {
-    setup() {
-        const showSidebar = ref(false);
-        
-        return {
-            showSidebar
-        }
-    }
-}
+<script setup >
 </script>
