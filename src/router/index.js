@@ -17,7 +17,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/dashboard',
+      path: '/',
       name: 'dashboard',
       component: dashboard
     },

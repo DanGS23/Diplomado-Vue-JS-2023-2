@@ -2,7 +2,7 @@
     <div class="rounded-lg bg-slate-300 shadow-xl ">
       <div class="grid md:grid-cols-2">
         <div class="m-4">
-                <img class="w-full h-80 rounded-t-lg" src="/src/assets/img/5900_pool_b92df465-0c67-4161-b8bb-67f9fc301094.jpg" alt="">
+                <img class="w-full h-80 rounded-lg shadow-xl" src="/src/assets/img/5900_pool_b92df465-0c67-4161-b8bb-67f9fc301094.jpg" alt="">
                 <!-- <div class="grid grid-cols-2 mb-4 ">
                     <img class="w-full h-40 rounded-bl-lg"src="/src/img/62752986a0b9f.r_1651848957740.0-73-1500-823.jpeg" alt="">
                     <img class="w-full h-40 rounded-br" src="/src/img/exterior.jpg" alt="">
